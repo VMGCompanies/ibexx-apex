@@ -52,7 +52,7 @@ const WorkflowCard = ({ name, icon: Icon, desc, to, confidence, onRun }: any) =>
       </div>
       <button
         onClick={onRun}
-        className="inline-flex items-center gap-1 px-2 py-1 bg-apex-600 hover:bg-apex-700 text-white text-[10px] font-semibold rounded transition-colors"
+        className="inline-flex items-center gap-1 px-2 py-1 bg-apex-700 hover:bg-apex-700 text-white text-[10px] font-semibold rounded transition-colors"
       >
         <Play size={9} fill="currentColor" /> Run
       </button>
@@ -66,7 +66,7 @@ const PipelineBar = ({ stage, count, value, maxCount }: any) => (
     <div className="w-28 text-[10px] text-slate-500 truncate flex-shrink-0">{stage}</div>
     <div className="flex-1 h-5 bg-slate-100 rounded overflow-hidden relative">
       <div
-        className="h-full bg-apex-600 rounded transition-all"
+        className="h-full bg-apex-700 rounded transition-all"
         style={{ width: `${Math.max((count / maxCount) * 100, 4)}%` }}
       />
       <span className="absolute left-2 top-0 h-full flex items-center text-[10px] font-semibold text-white mix-blend-difference">
@@ -103,10 +103,10 @@ export const Dashboard = () => {
         </div>
         <div className="flex items-center gap-3">
           <div className="flex items-center gap-2 bg-apex-50 border border-apex-200 rounded-lg px-3 py-1.5">
-            <div className="w-2 h-2 bg-apex-500 rounded-full pulse-dot" />
+            <div className="w-2 h-2 bg-apex-600 rounded-full pulse-dot" />
             <span className="text-xs font-semibold text-apex-700">APEX Standby</span>
           </div>
-          <Button variant="blue" size="sm" onClick={() => showToast('APEX Full Cycle triggered — demand scan initiated', 'success')}>
+          <Button variant="navy" size="sm" onClick={() => showToast('APEX Full Cycle triggered — demand scan initiated', 'success')}>
             <Zap size={13} /> Trigger Full Cycle
           </Button>
         </div>
@@ -117,7 +117,7 @@ export const Dashboard = () => {
         <KpiCard label="Open POs" value={openPOs} sub={`$${(purchaseOrders.filter(p => p.status !== 'Received').reduce((s, p) => s + p.totalValue, 0) / 1000).toFixed(0)}k open commitment`} icon={ShoppingCart} color="bg-slate-900" />
         <KpiCard label="P1 Alerts" value={p1Alerts} sub={`${p1Alerts} require immediate action`} icon={AlertTriangle} color="bg-red-600" alert />
         <KpiCard label="Stockout SKUs" value={stockouts} sub={`+${criticals} critical reorder`} icon={PackageSearch} color="bg-red-500" alert />
-        <KpiCard label="Spend MTD" value={`$${(spendMTD / 1000).toFixed(0)}k`} sub="Mar 2026 PO issuance" icon={TrendingUp} color="bg-apex-600" />
+        <KpiCard label="Spend MTD" value={`$${(spendMTD / 1000).toFixed(0)}k`} sub="Mar 2026 PO issuance" icon={TrendingUp} color="bg-apex-700" />
         <KpiCard label="AP Queue" value="5" sub="2 exceptions held" icon={CreditCard} color="bg-amber-500" alert />
         <KpiCard label="Vendor Watch" value="2" sub="WPS + Gates Unitta" icon={BarChart3} color="bg-yellow-600" alert />
       </div>
@@ -132,7 +132,7 @@ export const Dashboard = () => {
                   <h3 className="font-semibold text-slate-900 text-sm">Procurement Pipeline</h3>
                   <p className="text-xs text-slate-400 mt-0.5">Items & value at each stage</p>
                 </div>
-                <Badge variant="blue">Live</Badge>
+                <Badge variant="navy">Live</Badge>
               </div>
             </CardHeader>
             <CardBody className="space-y-0.5">
@@ -282,7 +282,7 @@ export const Dashboard = () => {
                   <div className="w-20 text-[10px] text-slate-500 flex-shrink-0">{a.bucket}</div>
                   <div className="flex-1 h-3 bg-slate-100 rounded overflow-hidden">
                     <div
-                      className={`h-full rounded ${a.pct > 20 && a.bucket !== '0–30 days' ? 'bg-red-400' : 'bg-apex-500'}`}
+                      className={`h-full rounded ${a.pct > 20 && a.bucket !== '0–30 days' ? 'bg-red-400' : 'bg-apex-600'}`}
                       style={{ width: `${a.pct}%` }}
                     />
                   </div>
@@ -304,7 +304,7 @@ export const Dashboard = () => {
                   <h3 className="font-semibold text-slate-900 text-sm">Spend Intelligence — Rolling 6 Months by Product Line</h3>
                   <p className="text-xs text-slate-400 mt-0.5">Oct 2025 – Mar 2026</p>
                 </div>
-                <Badge variant="blue">Seasonal Pattern Visible</Badge>
+                <Badge variant="navy">Seasonal Pattern Visible</Badge>
               </div>
             </CardHeader>
             <CardBody>
@@ -312,7 +312,7 @@ export const Dashboard = () => {
                 <AreaChart data={monthlySpendData.slice(6)} margin={{ top: 5, right: 10, bottom: 0, left: -15 }}>
                   <defs>
                     {[
-                      { id: 'gCA', color: '#3b82f6' },
+                      { id: 'gCA', color: '#1B4D80' },
                       { id: 'gPD', color: '#f97316' },
                       { id: 'gSD', color: '#8b5cf6' },
                       { id: 'gPS', color: '#10b981' },
@@ -329,7 +329,7 @@ export const Dashboard = () => {
                   <YAxis tick={{ fontSize: 10 }} tickFormatter={v => `$${(v/1000).toFixed(0)}k`} />
                   <Tooltip contentStyle={{ fontSize: 11, borderRadius: 6 }} formatter={(v: any) => [`$${Number(v).toLocaleString()}`, '']} />
                   <Legend iconType="circle" iconSize={7} wrapperStyle={{ fontSize: 10 }} />
-                  <Area type="monotone" dataKey="canAm"       name="Can-Am Dirt"    stroke="#3b82f6" fill="url(#gCA)" strokeWidth={2} />
+                  <Area type="monotone" dataKey="canAm"       name="Can-Am Dirt"    stroke="#1B4D80" fill="url(#gCA)" strokeWidth={2} />
                   <Area type="monotone" dataKey="polarisDirt" name="Polaris Dirt"   stroke="#f97316" fill="url(#gPD)" strokeWidth={2} />
                   <Area type="monotone" dataKey="skiDoo"      name="Ski-Doo Snow"   stroke="#8b5cf6" fill="url(#gSD)" strokeWidth={2} />
                   <Area type="monotone" dataKey="polarisSnow" name="Polaris Snow"   stroke="#10b981" fill="url(#gPS)" strokeWidth={2} />
@@ -389,7 +389,7 @@ export const Dashboard = () => {
             <div key={a.id} className="px-5 py-3 flex items-start gap-3 hover:bg-slate-50">
               <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
                 a.status === 'Escalated' ? 'bg-red-500' :
-                a.status === 'In Progress' ? 'bg-apex-500' : 'bg-green-500'
+                a.status === 'In Progress' ? 'bg-apex-600' : 'bg-green-500'
               }`} />
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2">

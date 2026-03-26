@@ -161,7 +161,7 @@ export const SettingsPage = () => {
             <CardBody>
               {active.fields.map(f => <ConfigField key={f.label} {...f} />)}
               <div className="mt-6 flex gap-3">
-                <Button variant="blue" onClick={() => showToast(`${active.label} settings saved`, 'success')}>
+                <Button variant="navy" onClick={() => showToast(`${active.label} settings saved`, 'success')}>
                   <Save size={13} /> Save Section
                 </Button>
                 <Button variant="secondary" onClick={() => showToast('Configuration export sent to Neuralogic engineering', 'success')}>

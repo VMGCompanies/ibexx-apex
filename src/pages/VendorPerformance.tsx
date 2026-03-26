@@ -55,7 +55,7 @@ export const VendorPerformance = () => {
           </div>
           <p className="text-sm text-slate-500">Monthly automated scorecard · Real-time reclassification alerts · Relationship health monitoring</p>
         </div>
-        <Button variant="blue" size="sm" onClick={() => showToast('Monthly vendor scorecards regenerated and delivered', 'success')}>
+        <Button variant="navy" size="sm" onClick={() => showToast('Monthly vendor scorecards regenerated and delivered', 'success')}>
           Run Scorecard Cycle
         </Button>
       </div>
@@ -177,7 +177,7 @@ export const VendorPerformance = () => {
                     <RadarChart data={radarData}>
                       <PolarGrid />
                       <PolarAngleAxis dataKey="metric" tick={{ fontSize: 9 }} />
-                      <Radar dataKey="value" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.2} strokeWidth={2} />
+                      <Radar dataKey="value" stroke="#1B4D80" fill="#1B4D80" fillOpacity={0.2} strokeWidth={2} />
                     </RadarChart>
                   </ResponsiveContainer>
                 </div>
@@ -205,7 +205,7 @@ export const VendorPerformance = () => {
                     <XAxis dataKey="quarter" tick={{ fontSize: 11 }} />
                     <YAxis domain={[75, 100]} tick={{ fontSize: 10 }} />
                     <Tooltip contentStyle={{ fontSize: 11, borderRadius: 6 }} formatter={(v: any) => [`${v}%`, 'Score']} />
-                    <Line type="monotone" dataKey="score" stroke="#3b82f6" strokeWidth={2.5} dot={{ fill: '#3b82f6', r: 4 }} />
+                    <Line type="monotone" dataKey="score" stroke="#1B4D80" strokeWidth={2.5} dot={{ fill: '#1B4D80', r: 4 }} />
                   </LineChart>
                 </ResponsiveContainer>
               </CardBody>

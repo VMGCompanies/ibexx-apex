@@ -1,14 +1,15 @@
 import React from 'react';
 
-type Variant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'blue';
+type Variant = 'primary' | 'secondary' | 'danger' | 'ghost' | 'navy' | 'gold';
 type Size = 'sm' | 'md' | 'lg';
 
 const variants: Record<Variant, string> = {
-  primary:   'bg-slate-900 text-white hover:bg-slate-700',
-  secondary: 'bg-white text-slate-900 border border-slate-300 hover:bg-slate-50',
+  primary:   'bg-apex-900 text-white hover:bg-apex-700',
+  secondary: 'bg-white text-apex-900 border border-slate-300 hover:bg-slate-50',
   danger:    'bg-red-600 text-white hover:bg-red-700',
   ghost:     'bg-transparent text-slate-700 hover:bg-slate-100',
-  blue:      'bg-apex-600 text-white hover:bg-apex-700',
+  navy:      'bg-apex-800 text-white hover:bg-apex-700',
+  gold:      'bg-brand-500 text-white hover:bg-brand-600',
 };
 
 const sizes: Record<Size, string> = {
@@ -25,7 +26,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button = ({ variant = 'primary', size = 'md', children, className = '', ...props }: ButtonProps) => (
   <button
-    className={`inline-flex items-center gap-2 font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-apex-500 focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
+    className={`inline-flex items-center gap-2 font-medium rounded transition-colors focus:outline-none focus:ring-2 focus:ring-apex-400 focus:ring-offset-1 disabled:opacity-50 disabled:cursor-not-allowed ${variants[variant]} ${sizes[size]} ${className}`}
     {...props}
   >
     {children}

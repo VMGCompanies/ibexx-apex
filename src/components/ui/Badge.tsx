@@ -1,16 +1,18 @@
 import React from 'react';
 
-type Variant = 'success' | 'warning' | 'danger' | 'info' | 'neutral' | 'blue' | 'dark' | 'orange';
+type Variant = 'success' | 'warning' | 'danger' | 'info' | 'neutral' | 'navy' | 'gold' | 'blue' | 'dark' | 'orange';
 
 const variants: Record<Variant, string> = {
   success:  'bg-green-100 text-green-800',
   warning:  'bg-yellow-100 text-yellow-800',
   danger:   'bg-red-100 text-red-800',
-  info:     'bg-blue-100 text-blue-700',
+  info:     'bg-apex-100 text-apex-800',
   neutral:  'bg-slate-100 text-slate-600',
-  blue:     'bg-apex-100 text-apex-800',
-  dark:     'bg-slate-800 text-white',
-  orange:   'bg-brand-100 text-brand-600',
+  navy:     'bg-apex-100 text-apex-900',
+  gold:     'bg-brand-100 text-brand-700',
+  blue:     'bg-apex-100 text-apex-800',     // alias → navy
+  dark:     'bg-apex-900 text-white',
+  orange:   'bg-brand-100 text-brand-600',   // alias → gold
 };
 
 interface BadgeProps {

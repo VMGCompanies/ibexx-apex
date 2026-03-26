@@ -10,7 +10,7 @@ import { Button } from '../components/ui/Button';
 import { showToast } from '../components/ui/Toast';
 import { monthlySpendData, vendors } from '../data/mockData';
 
-const COLORS = ['#3b82f6', '#f97316', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'];
+const COLORS = ['#1B4D80', '#f97316', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444'];
 
 const lineLabels = ['Can-Am Dirt', 'Polaris Dirt', 'Ski-Doo Snow', 'Polaris Snow', 'Arctic Cat Snow', 'Yamaha Snow'];
 const lineKeys   = ['canAm', 'polarisDirt', 'skiDoo', 'polarisSnow', 'arcticCat', 'yamaha'];
@@ -65,7 +65,7 @@ export const SpendAnalysis = () => {
               <button key={p} onClick={() => setPeriod(p)} className={`px-3 py-1.5 text-xs font-medium transition-colors ${period === p ? 'bg-apex-600 text-white' : 'bg-white text-slate-600 hover:bg-slate-50'}`}>{p}</button>
             ))}
           </div>
-          <Button variant="blue" size="sm" onClick={() => showToast('Q1 2026 Cost Intelligence Report generated', 'success')}>
+          <Button variant="navy" size="sm" onClick={() => showToast('Q1 2026 Cost Intelligence Report generated', 'success')}>
             Export Report
           </Button>
         </div>
@@ -208,7 +208,7 @@ export const SpendAnalysis = () => {
               ))}
             </div>
             <div className="px-5 py-3 border-t border-slate-100">
-              <Button size="sm" variant="blue" className="w-full" onClick={() => showToast('Savings opportunity summary sent to Alex for review', 'success')}>
+              <Button size="sm" variant="navy" className="w-full" onClick={() => showToast('Savings opportunity summary sent to Alex for review', 'success')}>
                 Send to Ops Lead for Review
               </Button>
             </div>
@@ -224,7 +224,7 @@ export const SpendAnalysis = () => {
                   <XAxis dataKey="month" tick={{ fontSize: 10 }} />
                   <YAxis tick={{ fontSize: 9 }} tickFormatter={v => `$${(v / 1000).toFixed(0)}k`} />
                   <Tooltip contentStyle={{ fontSize: 11 }} formatter={(v: any) => [`$${Number(v).toLocaleString()}`, 'Total']} />
-                  <Line type="monotone" dataKey="total" stroke="#3b82f6" strokeWidth={2} dot={false} />
+                  <Line type="monotone" dataKey="total" stroke="#1B4D80" strokeWidth={2} dot={false} />
                 </LineChart>
               </ResponsiveContainer>
             </CardBody>

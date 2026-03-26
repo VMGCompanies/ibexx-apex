@@ -84,7 +84,7 @@ export const Purchasing = () => {
           </div>
           <p className="text-sm text-slate-500">APEX-generated draft POs from approved procurement demand report · Human approval required above threshold</p>
         </div>
-        <Button variant="blue" size="sm" onClick={() => showToast('Issuing all Ready-to-Issue POs autonomously...', 'success')}>
+        <Button variant="navy" size="sm" onClick={() => showToast('Issuing all Ready-to-Issue POs autonomously...', 'success')}>
           <Zap size={13} /> Issue All Approved
         </Button>
       </div>
@@ -127,7 +127,7 @@ export const Purchasing = () => {
                   <div className="text-[10px] text-slate-400 mb-2">Due: {po.requestedDelivery} · {po.payTerms} · OTD {vendor?.onTimeRate}%</div>
                   <div className="text-[10px] text-apex-700 bg-apex-50 border border-apex-100 rounded px-2 py-1.5 leading-snug">{po.note}</div>
                   <div className="flex gap-2 mt-3">
-                    <Button size="sm" variant="blue" className="flex-1" onClick={(e) => { e.stopPropagation(); showToast(`${po.id} approved and issued to ${po.vendor}`, 'success'); }}>
+                    <Button size="sm" variant="navy" className="flex-1" onClick={(e) => { e.stopPropagation(); showToast(`${po.id} approved and issued to ${po.vendor}`, 'success'); }}>
                       <CheckCircle size={12} /> Approve & Issue
                     </Button>
                     <Button size="sm" variant="secondary" onClick={(e) => { e.stopPropagation(); showToast(`${po.id} sent back for revision`, 'warning'); }}>

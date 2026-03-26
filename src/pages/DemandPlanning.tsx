@@ -52,7 +52,7 @@ export const DemandPlanning = () => {
           </div>
           <p className="text-sm text-slate-500">Real-time SKU-level reorder status across all product lines · Seasonal mode: UTV Pre-Season ramp active</p>
         </div>
-        <Button variant="blue" size="sm" onClick={() => showToast('APEX running full replenishment scan across all pipelines...', 'success')}>
+        <Button variant="navy" size="sm" onClick={() => showToast('APEX running full replenishment scan across all pipelines...', 'success')}>
           <Zap size={13} /> Run Replenishment Scan
         </Button>
       </div>
@@ -79,7 +79,7 @@ export const DemandPlanning = () => {
           <span className="text-sm font-semibold text-apex-900">Estimated procurement requirement: </span>
           <span className="text-sm text-apex-700">${totalReorderValue.toLocaleString(undefined, { maximumFractionDigits: 0 })} across {inventory.filter(i => i.status !== 'Healthy').length} SKUs — sorted by urgency priority below</span>
         </div>
-        <Button size="sm" variant="blue" onClick={() => showToast('Procurement demand report sent to Vendor & PO workflow', 'success')}>
+        <Button size="sm" variant="navy" onClick={() => showToast('Procurement demand report sent to Vendor & PO workflow', 'success')}>
           Send to WF2 →
         </Button>
       </div>

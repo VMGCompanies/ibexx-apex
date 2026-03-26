@@ -34,7 +34,7 @@ export const APPipeline = () => {
           </div>
           <p className="text-sm text-slate-500">Invoice reconciliation, GL coding, aging management, and payment schedule generation</p>
         </div>
-        <Button variant="blue" size="sm" onClick={() => showToast('Weekly payment schedule generated and sent to Alex for authorization', 'success')}>
+        <Button variant="navy" size="sm" onClick={() => showToast('Weekly payment schedule generated and sent to Alex for authorization', 'success')}>
           <Calendar size={13} /> Generate Payment Schedule
         </Button>
       </div>
@@ -63,7 +63,7 @@ export const APPipeline = () => {
             <span className="font-semibold text-apex-900">[P3] Early Payment Discount Opportunity — </span>
             <span className="text-apex-700">INV-4413 (Tucker Powersports): 2/10 Net 30 · ${earlyDiscount[0].discountAmount?.toFixed(2)} savings if paid by {earlyDiscount[0].discountDeadline}</span>
           </div>
-          <Button size="sm" variant="blue" onClick={() => showToast('Early payment recommendation escalated to Alex', 'success')}>
+          <Button size="sm" variant="navy" onClick={() => showToast('Early payment recommendation escalated to Alex', 'success')}>
             Flag for Approval
           </Button>
         </div>
@@ -187,13 +187,13 @@ export const APPipeline = () => {
                   )}
                   <div className="flex gap-2 mt-4">
                     {selected.status === 'Matched-Approved' && (
-                      <Button size="sm" variant="blue" className="flex-1" onClick={() => showToast(`${selected.id} queued for next payment run`, 'success')}>
+                      <Button size="sm" variant="navy" className="flex-1" onClick={() => showToast(`${selected.id} queued for next payment run`, 'success')}>
                         <CheckCircle size={12} /> Queue for Payment
                       </Button>
                     )}
                     {selected.status === 'Exception-Held' && (
                       <>
-                        <Button size="sm" variant="blue" className="flex-1" onClick={() => showToast(`${selected.id} approved with override — logged`, 'success')}>
+                        <Button size="sm" variant="navy" className="flex-1" onClick={() => showToast(`${selected.id} approved with override — logged`, 'success')}>
                           Approve with Override
                         </Button>
                         <Button size="sm" variant="danger" onClick={() => showToast(`${selected.id} rejected — vendor notification sent`, 'error')}>

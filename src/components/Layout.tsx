@@ -10,11 +10,11 @@ import { alerts } from '../data/mockData';
 import { Button } from './ui/Button';
 import { showToast } from './ui/Toast';
 
-// APEX logo mark — angular chevron / bolt
+// APEX logo mark — angular chevron
 const ApexLogo = () => (
   <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="14,2 26,26 19,19 14,24 9,19 2,26" fill="white" fillOpacity="0.9" />
-    <polygon points="14,8 22,24 17,18 14,21 11,18 6,24" fill="#0f172a" fillOpacity="0.5" />
+    <polygon points="14,2 26,26 19,19 14,24 9,19 2,26" fill="white" fillOpacity="0.92" />
+    <polygon points="14,8 22,24 17,18 14,21 11,18 6,24" fill="#0A1F3C" fillOpacity="0.4" />
   </svg>
 );
 
@@ -39,9 +39,11 @@ export const Layout = () => {
 
   return (
     <div className="flex h-screen bg-slate-50 overflow-hidden">
-      {/* Sidebar */}
-      <aside className={`${sidebarOpen ? 'w-62' : 'w-0 overflow-hidden'} transition-all duration-200 bg-slate-950 flex-shrink-0 flex flex-col`} style={{ minWidth: sidebarOpen ? '248px' : '0' }}>
-
+      {/* Sidebar — deep navy */}
+      <aside
+        className={`${sidebarOpen ? 'w-62' : 'w-0 overflow-hidden'} transition-all duration-200 bg-apex-900 flex-shrink-0 flex flex-col`}
+        style={{ minWidth: sidebarOpen ? '248px' : '0' }}
+      >
         {/* Logo */}
         <div className="px-5 py-4 border-b border-white/10">
           <div className="flex items-center gap-3">
@@ -55,8 +57,8 @@ export const Layout = () => {
 
         {/* Status bar */}
         <div className="px-4 py-2.5 border-b border-white/10 flex items-center gap-2">
-          <div className="w-2 h-2 bg-apex-400 rounded-full pulse-dot flex-shrink-0" />
-          <span className="text-apex-300 text-[10px] font-semibold uppercase tracking-wider">Active — Standing By</span>
+          <div className="w-2 h-2 bg-brand-300 rounded-full pulse-dot flex-shrink-0" />
+          <span className="text-brand-200 text-[10px] font-semibold uppercase tracking-wider">Active — Standing By</span>
           {p1Count > 0 && (
             <span className="ml-auto bg-red-500 text-white text-[9px] font-bold px-1.5 py-0.5 rounded-full">{p1Count} P1</span>
           )}
@@ -80,7 +82,7 @@ export const Layout = () => {
                 className={({ isActive }) =>
                   `flex items-center gap-2.5 px-3 py-2 rounded text-xs mb-0.5 transition-colors group ${
                     isActive
-                      ? 'bg-apex-600 text-white font-semibold'
+                      ? 'bg-brand-500 text-white font-semibold'
                       : 'text-white/55 hover:bg-white/8 hover:text-white'
                   }`
                 }
@@ -97,9 +99,9 @@ export const Layout = () => {
 
         {/* Season indicator */}
         <div className="px-4 py-3 border-t border-white/10 space-y-2">
-          <div className="bg-apex-900/60 border border-apex-700/40 rounded px-2.5 py-2">
+          <div className="bg-apex-800/80 border border-brand-500/30 rounded px-2.5 py-2">
             <div className="text-[9px] text-white/40 uppercase tracking-widest mb-1">Seasonal Mode</div>
-            <div className="text-apex-300 text-[10px] font-semibold">UTV Pre-Season Ramp</div>
+            <div className="text-brand-300 text-[10px] font-semibold">UTV Pre-Season Ramp</div>
             <div className="text-white/35 text-[9px]">Can-Am & Polaris Dirt sensitivity ↑</div>
           </div>
           <div className="text-white/20 text-[9px] text-center">
@@ -112,7 +114,7 @@ export const Layout = () => {
       <div className="flex-1 flex flex-col min-w-0 overflow-hidden">
         {/* Header */}
         <header className="bg-white border-b border-slate-200 h-14 flex items-center px-4 gap-4 flex-shrink-0 shadow-sm">
-          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-slate-400 hover:text-slate-900 transition-colors">
+          <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-slate-400 hover:text-apex-900 transition-colors">
             {sidebarOpen ? <X size={18} /> : <Menu size={18} />}
           </button>
 
@@ -128,14 +130,14 @@ export const Layout = () => {
           <div className="flex-1" />
 
           {/* Seasonal badge */}
-          <div className="hidden md:flex items-center gap-1.5 bg-amber-50 border border-amber-200 rounded px-2.5 py-1">
-            <div className="w-1.5 h-1.5 bg-amber-400 rounded-full" />
-            <span className="text-amber-700 text-xs font-medium">UTV Pre-Season Active</span>
+          <div className="hidden md:flex items-center gap-1.5 bg-brand-50 border border-brand-200 rounded px-2.5 py-1">
+            <div className="w-1.5 h-1.5 bg-brand-400 rounded-full" />
+            <span className="text-brand-700 text-xs font-medium">UTV Pre-Season Active</span>
           </div>
 
           {/* Alerts bell */}
           <button
-            className="relative text-slate-500 hover:text-slate-900 transition-colors"
+            className="relative text-slate-500 hover:text-apex-900 transition-colors"
             onClick={() => showToast(`${openAlerts} active alerts require attention`, 'warning')}
           >
             <Bell size={18} />
@@ -148,7 +150,7 @@ export const Layout = () => {
 
           {/* User */}
           <div className="flex items-center gap-2 pl-3 border-l border-slate-200">
-            <div className="w-7 h-7 bg-slate-900 rounded-full flex items-center justify-center">
+            <div className="w-7 h-7 bg-apex-900 rounded-full flex items-center justify-center">
               <span className="text-white text-xs font-semibold">AL</span>
             </div>
             <div className="text-sm">
@@ -158,7 +160,7 @@ export const Layout = () => {
           </div>
 
           {/* Trigger */}
-          <Button variant="blue" size="sm" onClick={() => showToast('APEX Full Cycle triggered — scanning all pipelines...', 'success')}>
+          <Button variant="navy" size="sm" onClick={() => showToast('APEX Full Cycle triggered — scanning all pipelines...', 'success')}>
             <Zap size={13} />
             Trigger APEX
           </Button>
