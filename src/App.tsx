@@ -10,6 +10,7 @@ import { APPipeline } from './pages/APPipeline';
 import { VendorPerformance } from './pages/VendorPerformance';
 import { SpendAnalysis } from './pages/SpendAnalysis';
 import { SettingsPage } from './pages/Settings';
+import { Capabilities } from './pages/Capabilities';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="ap-pipeline"        element={<APPipeline />} />
             <Route path="vendor-performance" element={<VendorPerformance />} />
             <Route path="spend-analysis"     element={<SpendAnalysis />} />
+            <Route path="capabilities"       element={<Capabilities />} />
             <Route path="settings"           element={<SettingsPage />} />
           </Route>
         </Routes>

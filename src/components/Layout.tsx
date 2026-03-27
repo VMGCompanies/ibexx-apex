@@ -4,7 +4,7 @@ import {
   LayoutDashboard, PackageSearch, ShoppingCart, Truck,
   PackageCheck, CreditCard, BarChart3, TrendingUp,
   Bell, Search, Zap, Menu, X, ChevronRight, Settings,
-  AlertTriangle,
+  AlertTriangle, Cpu,
 } from 'lucide-react';
 import { alerts } from '../data/mockData';
 import { Button } from './ui/Button';
@@ -35,6 +35,7 @@ const navItems = [
   { to: '/spend-analysis',     label: 'Spend Analysis',     icon: TrendingUp },
 
   { separator: true, label: 'SYSTEM' },
+  { to: '/capabilities',       label: 'Capability Matrix',  icon: Cpu },
   { to: '/settings',           label: 'Settings',           icon: Settings },
 ];
 
