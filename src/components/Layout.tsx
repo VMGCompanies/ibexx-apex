@@ -13,11 +13,19 @@ import { WorkflowRunner } from './WorkflowRunner';
 
 type ApexStatus = 'active' | 'paused' | 'stopped' | 'aborted';
 
-// ─── Logo ─────────────────────────────────────────────────────────────────────
-const ApexLogo = () => (
-  <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <polygon points="14,2 26,26 19,19 14,24 9,19 2,26" fill="white" fillOpacity="0.92" />
-    <polygon points="14,8 22,24 17,18 14,21 11,18 6,24" fill="#0A1F3C" fillOpacity="0.4" />
+// ─── Ibexx wordmark SVG — matches ibexx.com brand (bold red #d02626) ──────────
+const IbexxWordmark = () => (
+  <svg width="90" height="24" viewBox="0 0 90 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <text
+      x="0" y="20"
+      fontFamily="'Arial Black', 'Arial Bold', Impact, 'Helvetica Neue', sans-serif"
+      fontWeight="900"
+      fontSize="22"
+      letterSpacing="-0.5"
+      fill="#d02626"
+    >
+      IBEXX
+    </text>
   </svg>
 );
 
@@ -157,12 +165,12 @@ export const Layout = () => {
       >
         {/* Branding */}
         <div className="px-5 py-4 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <ApexLogo />
-            <div>
-              <div className="text-white font-bold text-sm leading-tight tracking-wide">APEX</div>
-              <div className="text-white/45 text-[10px] leading-tight uppercase tracking-wider">Ibexx Procurement Platform</div>
-            </div>
+          <IbexxWordmark />
+          <div className="mt-1.5 flex items-center gap-1.5">
+            <div className="w-1 h-1 bg-white/25 rounded-full" />
+            <span className="text-white/40 text-[9px] uppercase tracking-widest font-semibold">
+              APEX Procurement Platform
+            </span>
           </div>
         </div>
 
